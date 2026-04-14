@@ -15,8 +15,14 @@ public static class ServiceProvider
     public static Avalonia.AppBuilder AddScoped<TInterface, TImplementation>(this Avalonia.AppBuilder builder)
         where TImplementation : TInterface
     {
-        services[typeof(TInterface)] = typeof(TImplementation);
+        AddScoped<TInterface, TImplementation>();
         return builder;
+    }
+
+    public static void AddScoped<TInterface, TImplementation>()
+        where TImplementation : TInterface
+    {
+        services[typeof(TInterface)] = typeof(TImplementation);
     }
 
     /// <summary>
@@ -29,10 +35,16 @@ public static class ServiceProvider
     public static Avalonia.AppBuilder AddSingleton<TInterface, TImplementation>(this Avalonia.AppBuilder builder)
         where TImplementation : class, TInterface, new()
     {
-        object instance = Activator.CreateInstance<TImplementation>()!;
-        singletons[typeof(TInterface)] = instance;
+        AddSingleton<TInterface, TImplementation>();
 
         return builder;
+    }
+
+    public static void AddSingleton<TInterface, TImplementation>()
+        where TImplementation : class, TInterface, new()
+    {
+        object instance = Activator.CreateInstance<TImplementation>()!;
+        singletons[typeof(TInterface)] = instance;
     }
 
     public static TInterface GetService<TInterface>()

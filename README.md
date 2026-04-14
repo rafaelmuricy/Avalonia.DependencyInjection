@@ -8,13 +8,11 @@ In your prefered platform project, you create your service that implements an In
 
 **MainActivity.cs**
 ```csharp
-public class MainActivity : AvaloniaMainActivity<App>
+public class MainActivity : AvaloniaMainActivity
 {
-    protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
+    public MainActivity()
     {
-        return base.CustomizeAppBuilder(builder)
-            .AddSingleton<IImageService, ImageService>()
-            .WithInterFont();
+        Avalonia.DependencyInjection.ServiceProvider.AddSingleton<IPostService, PostService>();
     }
 }
 ```
