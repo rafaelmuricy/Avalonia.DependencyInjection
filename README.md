@@ -4,9 +4,9 @@
 
 In your prefered platform project, you create your service that implements an Interface, and register the service in the entry point of your applications.
 
-Android:
+### Android:
 
-MainActivity.cs
+**MainActivity.cs**
 ```csharp
 public class MainActivity : AvaloniaMainActivity<App>
 {
@@ -19,9 +19,9 @@ public class MainActivity : AvaloniaMainActivity<App>
 }
 ```
 
-iOS:
+### iOS:
 
-AppDelegate.cs
+**AppDelegate.cs**
 ```csharp
 public partial class AppDelegate : AvaloniaAppDelegate<App>
 {
@@ -34,20 +34,16 @@ public partial class AppDelegate : AvaloniaAppDelegate<App>
 }
 ```
 
-Desktop:
+### Desktop:
 
-Program.cs
+**Program.cs**
 ```csharp
 sealed class Program
 {
-    // Initialization code. Don't use any Avalonia, third-party APIs or any
-    // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
-    // yet and stuff might break.
     [STAThread]
     public static void Main(string[] args) => BuildAvaloniaApp()
         .StartWithClassicDesktopLifetime(args);
 
-    // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
