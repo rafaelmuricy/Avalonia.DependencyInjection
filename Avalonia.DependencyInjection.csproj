@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>Avalonia.DepoendencyInjection</PackageId>
+    <PackageId>AvaloniaDependencyInjection</PackageId>
     <Version>1.0.0</Version>
     <Authors>Rafael Muricy</Authors>
     <Company>Rafael Muricy</Company>
