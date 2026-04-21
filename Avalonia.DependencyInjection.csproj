@@ -1,6 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>Avalonia.DepoendencyInjection</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Rafael Muricy</Authors>
+    <Company>Rafael Muricy</Company>
+    <Description>Simple dependency injection service that registers your services, based on platform or not, and injects them into the desired VM or anywhere else.</Description>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/rafaelmuricy/Avalonia.DependencyInjection</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+
     <OutputType>library</OutputType>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

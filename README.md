@@ -12,7 +12,7 @@ public class MainActivity : AvaloniaMainActivity
 {
     public MainActivity()
     {
-        Avalonia.DependencyInjection.ServiceProvider.AddSingleton<IPostService, PostService>();
+        Avalonia.DependencyInjection.ServiceProvider.AddSingleton<IImageService, ImageService>();
     }
 }
 ```
